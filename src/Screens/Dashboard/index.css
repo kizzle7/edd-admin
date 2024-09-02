@@ -1,0 +1,186 @@
+.h2-primary {
+  font-size: 25px;
+  color: #111111;
+
+  font-weight: 600;
+}
+.input-icons i {
+  position: absolute;
+  color: #000;
+}
+
+.input-icons {
+  width: 100%;
+  margin-bottom: 2px;
+  font-weight: 300;
+}
+
+.left-border {
+  border-left: 1px solid #e5e5e5;
+  height: 60px;
+}
+
+.icon {
+  padding: 10px;
+  min-width: 40px;
+  font-size: 30px;
+  left: 170px;
+  top: 20px;
+}
+.lite {
+  font-weight: 100;
+  font-family: Nunito;
+  font-size: 24px;
+}
+
+.input-search .search::-webkit-input-placeholder {
+  font-size: 12px;
+  width: 70%;
+}
+
+.card-pending-approval {
+  background-color: #171846;
+}
+
+.stats-boxes {
+  width: 200px;
+  height: 103px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #111111;
+}
+
+.stat-label-lite {
+  font-size: 12px;
+  color: #696969;
+  font-weight: 300;
+}
+
+.stat-num {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.order-height {
+  height: 90px;
+}
+
+.order-line {
+  height: 60px;
+  border-right: 1px solid #f3f3f3;
+}
+
+.order-status {
+  padding: 15px 0px;
+  text-align: center;
+}
+
+.success-card {
+  background-color: #e9fac8;
+}
+
+.revenue-container {
+  padding: 30px;
+}
+
+.success-paper-bg {
+  background-image: url(../../assets/svgs/success-bg.svg);
+  background-repeat: no repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 15px 10px;
+}
+
+.circle-ticket {
+  background-color: #2ec114;
+  border-radius: 50%;
+  border: 1px solid #2ec114;
+  width: 20px;
+  height: 20px;
+}
+
+.border-metrics {
+  border: 1px solid white;
+  border-radius: 8px;
+  background-color: white;
+  padding: 12px 5px;
+}
+
+.lead-metric {
+  font-size: 13.5px;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 500;
+  color: #71717a;
+}
+
+.metric-count{
+  font-size: 26.5px;
+  font-weight: 600;
+  color: #000;
+}
+
+.circle-users {
+  background-color: #171846;
+  border-radius: 50%;
+  border: 1px solid #171846;
+  width: 20px;
+  height: 20px;
+}
+
+.dot-success {
+  height: 13px;
+  width: 13px;
+  background-color: #2ec114;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-transit {
+  height: 13px;
+  width: 13px;
+  background-color: #eca84b;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-pending {
+  height: 13px;
+  width: 13px;
+  background-color: #d64b45;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.delivered {
+  color: #2ec114;
+  font-weight: 500;
+  font-family: Helvetica;
+}
+
+.transit {
+  color: #eca84b;
+  font-weight: 500;
+  font-family: Helvetica;
+}
+
+.pending {
+  color: #d64b45;
+  font-weight: 500;
+  font-family: Helvetica;
+}
+
+.trans-lists {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 960px) {
+  .stats-boxes {
+    width: 100%;
+    height: 100px;
+  }
+  .order-height {
+    height: 100%;
+  }
+}

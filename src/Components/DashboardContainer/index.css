@@ -1,0 +1,115 @@
+.sidebar {
+  position: fixed;
+  height: 100vh;
+  background: #f0f3f4;
+  box-shadow: 0px 1px 3px 0px rgba(54, 74, 99, 0.05);
+  top: 0px;
+  color: #000000;
+  width: 267px;
+  border: 2px solid F3F3F3;
+  left: 0px;
+  border-radius: 10px;
+}
+.sidebar .ps__rail-y {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+  background-color: transparent !important;
+}
+
+.active-li {
+  background-color: #081225;
+  color: #fff !important;
+  border-radius: 100px;
+  padding: 10px 20px;
+  font-family: Inter;
+  font-size: 14px;
+}
+
+.circle-imgg{
+  border-radius: 50%;
+  background-color: orange;
+  border: 1px solid orange;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inactive-li {
+  color: #e3e5e7 !important;
+  border-radius: 100px;
+  padding: 0px 20px;
+  font-family: Inter;
+  font-size: 14px;
+}
+
+.dash-logo {
+  height: 26px;
+  margin-top: 2.5rem !important;
+}
+
+.side-logo {
+  font-weight: 700;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  justify-content: center;
+}
+
+.top-navv {
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 20px 20px;
+  color: #000000;
+  background-color: white;
+}
+
+.page-container {
+  padding: 0px 20px;
+  position: relative;
+  display: block;
+}
+.page-content {
+  margin-left: 265px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.main-wrapper {
+  padding: 0px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar ul {
+  padding: 1rem 1.5rem;
+}
+
+.sidebar ul li {
+  color: white !important;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  font-family: Inter;
+
+}
+
+@media (max-width: 1350px) {
+  .sidebar {
+    transform: scale(0, 1);
+    z-index: 999;
+  }
+
+  .page-content {
+    margin-left: 0;
+  }
+
+  .page-content .main-wrapper {
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,33 @@
+.flex-gap {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: -4.5rem;
+}
+
+.flex-gap > div {
+  margin: 0px 90px; /* HERE WE ADD THE SPACE */
+}
+
+.vendor-btn {
+  width: 172px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  background: #171846;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-align: center;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px;
+  height: 41px;
+  border: transparent;
+}
+
+.vendor-info-card{
+  
+}

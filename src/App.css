@@ -1,0 +1,105 @@
+
+
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: 'Satoshi', sans-serif;
+
+  /* box-sizing: inherit; */
+}
+
+.table-sizee {
+  font-size: 16px !important;
+}
+.text-mute {
+  color: #9fa4ac;
+  color: 15px !important;
+}
+
+.pulseWrapper {
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.pulse {
+  height: 45px;
+  width: 45px;
+  padding:10px;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+
+.lead-dl {
+  font-weight: 600;
+  font-size: 35px;
+  padding-bottom: 0;
+  color: #000000;
+}
+
+/* input[type=checkbox], input[type=radio] {
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  width: 31px !important;
+  border: 1px solid #f5f6f7 !important;
+  height: 2rem;
+  border-radius: 3px !important;
+} */
+
+body {
+  background-color: #b5c2ca !important;
+  font-family: 'Satoshi', sans-serif;
+}
+
+.card {
+  border-radius: 10px !important;
+  border: 1px solid #ffffff !important;
+}
+
+input {
+  outline: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.rwt__tab {
+  background: transparent;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 10px 1rem !important;
+  font-size: 14px !important;
+  transition: background 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.amt-label {
+  font-size: 14px;
+  color: #111111;
+  font-weight: 700;
+}
+
+.validate-error {
+  color: red;
+  font-size: 12px;
+}
+
+/* Remove angles from arrow*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.styles_visible__3TqW5 {
+  position: fixed !important;
+}

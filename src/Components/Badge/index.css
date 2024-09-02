@@ -1,0 +1,52 @@
+/* BADGE */
+.badge {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 3px 10px;
+    font-weight: normal;
+  }
+  .open,
+  .OPEN {
+    background-color: #e7f0ff;
+    color: #4285f4;
+  }
+  
+  .pending,
+  .PENDING,
+  .IN_PROGRESS,
+  .PARTLY_FULFILLED,
+  .BOOKED,
+  .NOT_PAID,
+  .NOT_PICKED,
+  .Inactive,
+  .INACTIVE {
+    background-color: #fff4db;
+    color: #d6981b;
+  }
+  .failed,
+  .FAILED,
+  .CANCELLED,
+  .DEBIT,
+  .DECLINED,
+  .SUSPENDED,
+  .TERMINATED,
+  .ENDED {
+    color: #f44336;
+    background-color: #ffedec;
+  }
+  .success,
+  .COMPLETED,
+  .ACCEPTED,
+  .FULFILLED,
+  .CREDIT,
+  .AVAILABLE,
+  .PICKED,
+  .APPROVED,
+  .ACTIVE,.Active,
+  .PAID,
+  .CLAIMED {
+    color: #43a047;
+    background-color: #eefff1;
+  }
+  
+  

@@ -1,0 +1,13 @@
+.inputError {
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #ff5b5b;
+    display: flex;
+    align-content: center;
+    align-items: center;
+  }
+  svg {
+    margin-right: 6.4px;
+  }
+  

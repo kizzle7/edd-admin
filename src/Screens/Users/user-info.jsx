@@ -16,11 +16,46 @@ export const UserInfo = ({ data }) => {
   const [lastPayment, setLastPayment] = useState("");
   const [workSearchRequirement, setWorkSearchRequirement] = useState("");
   const [benefitYear, setBenefitYear] = useState("");
+  const [actionReqMain, setActionReqMain] = useState("");
+  const [actionText2, setActionText2] = useState("");
   const [claimStatusContent, setClaimStatusContent] = useState("");
   const [claimStatusTitle, setClaimStatusTitle] = useState("");
   const [backDateContent, setBackDateContent] = useState("");
   const [backDateTitle, setBackDateTitle] = useState("");
   const [load, setLoad] = useState("");
+
+  const getUserInfo = () => {
+    axios
+      .get(`${config.baseUrl}/admin/getProfileInfo/${data?._id}`, {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          const data = res.data.user;
+          setActionText(data?.actionText);
+          setBackDateContent(data?.backDateContent);
+          setActionReqMain(data.actionReqMain);
+          setActionText2(data.actionText2);
+          setBackDateTitle(data?.backDateTitle);
+          setBenefitYear(data?.benefitYear);
+          setClaimBalance(data?.claimBalance);
+          setClaimStatusTitle(data?.claimStatusTitle);
+          setClaimStatusContent(data?.claimStatusContent);
+          setLastPayment(data?.lastPayment);
+          setWeek1(data?.week1);
+          setWeek2(data?.week2);
+          setWeeklyBenefit(data?.weeklyBenefit);
+          setWorkSearchRequirement(data?.workSearchRequirement);
+        }
+      })
+      .catch((err) => {
+        setLoad(false);
+        if (err) {
+        }
+      });
+  };
 
   const updateUio = () => {
     setLoad(true);
@@ -39,6 +74,8 @@ export const UserInfo = ({ data }) => {
           claimStatusContent,
           claimStatusTitle,
           backDateTitle,
+          actionReqMain,
+          actionText2,
           backDateContent,
           profile_id: data?._id,
         },
@@ -62,12 +99,18 @@ export const UserInfo = ({ data }) => {
   };
 
   useEffect(() => {
+    getUserInfo();
+  }, []);
+
+  useEffect(() => {
     if (data?._id) {
       setActionText(data?.actionText);
       setBackDateContent(data?.backDateContent);
       setBackDateTitle(data?.backDateTitle);
       setBenefitYear(data?.benefitYear);
       setClaimBalance(data?.claimBalance);
+      setActionReqMain(data.actionReqMain);
+      setActionText2(data.actionText2);
       setClaimStatusTitle(data?.claimStatusTitle);
       setClaimStatusContent(data?.claimStatusContent);
       setLastPayment(data?.lastPayment);
@@ -91,8 +134,20 @@ export const UserInfo = ({ data }) => {
           <div>
             <ul className="container">
               <li>
+                <p>Action Required Bracket Text (Inside Bracket)</p>
+                <div className="mb-3">
+                  <Input
+                    type="text"
+                    className="input-className w-75"
+                    onChange={(e) => setActionReqMain(e.target.value)}
+                    value={actionReqMain}
+                    placeholder="Type text here for text inside the bracket"
+                  />
+                </div>
+              </li>
+              <li>
                 <p>
-                  <u>Actions Required Section</u>
+                  <u>Actions Required Section (Inside Box)</u>
                 </p>
                 <div>
                   <div className="mb-3">
@@ -101,7 +156,16 @@ export const UserInfo = ({ data }) => {
                       className="input-className w-75"
                       onChange={(e) => setActionText(e.target.value)}
                       value={actionText}
-                      placeholder="Type text here"
+                      placeholder="Type text here for first text"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <TextInput
+                      type="text"
+                      className="input-className w-75"
+                      onChange={(e) => setActionText2(e.target.value)}
+                      value={actionText2}
+                      placeholder="Type text here for second text"
                     />
                   </div>
                 </div>

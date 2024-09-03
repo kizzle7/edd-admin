@@ -38,6 +38,31 @@ export const UserInfo = ({ data }) => {
   const [residentialAddress2, setResidentialAddress2] = useState("");
   const [phone, setPhone] = useState("");
 
+  const getUserInfo = () => {
+    axios
+      .get(`${config.baseUrl}/admin/getProfileInfo/${data?._id}`, {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          const data = res.data.user;
+          setPhone(data?.phone);
+          setDob(data?.dob);
+          setMailAddress1(data?.mailAddress1);
+          setMailAddress2(data?.mailAddress2);
+          setResidentialAddress1(data?.residentialAddress1);
+          setResidentialAddress2(data?.residentialAddress2);
+        }
+      })
+      .catch((err) => {
+        setLoad(false);
+        if (err) {
+        }
+      });
+  };
+
   const updateUio = () => {
     setLoad(true);
     axios
@@ -81,6 +106,10 @@ export const UserInfo = ({ data }) => {
       setResidentialAddress2(data?.residentialAddress2);
     }
   }, [data]);
+
+  useEffect(() => {
+    getUserInfo()
+  },[])
 
   const Notification = (type, msgType, msg) => {
     notification[type]({

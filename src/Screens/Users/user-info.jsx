@@ -74,7 +74,7 @@ export const UserInfo = ({ data }) => {
           claimStatusContent,
           claimStatusTitle,
           backDateTitle,
-          actionReqMain,
+          actionReqMain:actionReqMain,
           actionText2,
           backDateContent,
           profile_id: data?._id,

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { TextInput } from "../../Components/Input/Text";
 import { Input } from "../../Components/Input/index";
 import { Button } from "../../Components/Button/index";
-import { notification } from "antd";
+import { message, notification } from "antd";
 import axios from "axios";
 import config from "../../config";
 export const UserInfo = ({ data }) => {
@@ -14,6 +14,7 @@ export const UserInfo = ({ data }) => {
   const [week1, setWeek1] = useState("");
   const [week2, setWeek2] = useState("");
   const [lastPayment, setLastPayment] = useState("");
+  const [message, setMessage] = useState("")
   const [workSearchRequirement, setWorkSearchRequirement] = useState("");
   const [benefitYear, setBenefitYear] = useState("");
   const [actionReqMain, setActionReqMain] = useState("");
@@ -46,6 +47,7 @@ export const UserInfo = ({ data }) => {
           setLastPayment(data?.lastPayment);
           setWeek1(data?.week1);
           setWeek2(data?.week2);
+          setMessage(data?.message)
           setWeeklyBenefit(data?.weeklyBenefit);
           setWorkSearchRequirement(data?.workSearchRequirement);
         }
@@ -73,6 +75,7 @@ export const UserInfo = ({ data }) => {
           benefitYear,
           claimStatusContent,
           claimStatusTitle,
+          message,
           backDateTitle,
           actionReqMain:actionReqMain,
           actionText2,
@@ -116,6 +119,7 @@ export const UserInfo = ({ data }) => {
       setLastPayment(data?.lastPayment);
       setWeek1(data?.week1);
       setWeek2(data?.week2);
+      setMessage(data?.message)
       setWeeklyBenefit(data?.weeklyBenefit);
       setWorkSearchRequirement(data?.workSearchRequirement);
     }
@@ -175,6 +179,15 @@ export const UserInfo = ({ data }) => {
                   <u>Back Dating Edd Section</u>
                 </p>
                 <div>
+                <div className="mb-3">
+                    <Input
+                      type="text"
+                      className="input-className w-75"
+                      onChange={(e) => setMessage(e.target.value)}
+                      value={message}
+                      placeholder="Type Message here"
+                    />
+                  </div>
                   <div className="mb-3">
                     <TextInput
                       type="text"

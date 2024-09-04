@@ -41,7 +41,7 @@ export const UserInfo = ({ data }) => {
           setBackDateContent(data?.backDateContent);
           setActionReqMain(data.actionReqMain);
           setActionText2(data.actionText2);
-          setBackDateReq(info?.backDateReq)
+          setBackDateReq(data?.backDateReq)
           setBackDateTitle(data?.backDateTitle);
           setBenefitYear(data?.benefitYear);
           setClaimBalance(data?.claimBalance);
@@ -118,7 +118,7 @@ export const UserInfo = ({ data }) => {
       setClaimBalance(data?.claimBalance);
       setActionReqMain(data.actionReqMain);
       setActionText2(data.actionText2);
-                setBackDateReq(info?.backDateReq)
+      setBackDateReq(data?.backDateReq)
       setClaimStatusTitle(data?.claimStatusTitle);
       setClaimStatusContent(data?.claimStatusContent);
       setLastPayment(data?.lastPayment);

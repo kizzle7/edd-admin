@@ -8,7 +8,9 @@ import axios from "axios";
 import config from "../../config";
 export const UserInfo = ({ data }) => {
   console.log(data);
+
   const [actionText, setActionText] = useState("");
+  const [backDateReq, setBackDateReq] = useState("")
   const [claimBalance, setClaimBalance] = useState("");
   const [weeklyBenefit, setWeeklyBenefit] = useState("");
   const [week1, setWeek1] = useState("");
@@ -39,6 +41,7 @@ export const UserInfo = ({ data }) => {
           setBackDateContent(data?.backDateContent);
           setActionReqMain(data.actionReqMain);
           setActionText2(data.actionText2);
+          setBackDateReq(info?.backDateReq)
           setBackDateTitle(data?.backDateTitle);
           setBenefitYear(data?.benefitYear);
           setClaimBalance(data?.claimBalance);
@@ -77,6 +80,7 @@ export const UserInfo = ({ data }) => {
           claimStatusTitle,
           message,
           backDateTitle,
+          backDateReq,
           actionReqMain:actionReqMain,
           actionText2,
           backDateContent,
@@ -114,6 +118,7 @@ export const UserInfo = ({ data }) => {
       setClaimBalance(data?.claimBalance);
       setActionReqMain(data.actionReqMain);
       setActionText2(data.actionText2);
+                setBackDateReq(info?.backDateReq)
       setClaimStatusTitle(data?.claimStatusTitle);
       setClaimStatusContent(data?.claimStatusContent);
       setLastPayment(data?.lastPayment);
@@ -186,6 +191,15 @@ export const UserInfo = ({ data }) => {
                       onChange={(e) => setMessage(e.target.value)}
                       value={message}
                       placeholder="Type Message here"
+                    />
+                  </div>
+                   <div className="mb-3">
+                    <Input
+                      type="text"
+                      className="input-className w-75"
+                      onChange={(e) => setBackDateReq(e.target.value)}
+                      value={backDateReq}
+                      placeholder="Type Backdate required here"
                     />
                   </div>
                   <div className="mb-3">

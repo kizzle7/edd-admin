@@ -30,6 +30,9 @@ export const UserInfo = ({ data }) => {
     "BackDating Eligible From 07/18/2020 To 04/24/2024 From 7611G"
   );
   const [load, setLoad] = useState("");
+  const [routing, setRouting] = useState("");
+  const [account, setAccount] = useState("");
+  const [bankName, setBankName] = useState("");
 
   const [name, setName] = useState("");
   const [mailAddress1, setMailAddress1] = useState("");
@@ -54,6 +57,9 @@ export const UserInfo = ({ data }) => {
           setMailAddress2(data?.mailAddress2);
           setResidentialAddress1(data?.residentialAddress1);
           setResidentialAddress2(data?.residentialAddress2);
+          setBankName(data?.bankName)
+          setRouting(data?.routing)
+          setAccount(data?.account)
         }
       })
       .catch((err) => {
@@ -76,6 +82,7 @@ export const UserInfo = ({ data }) => {
           dob,
           phone,
           profile_id: data?._id,
+          bankName,routing, account
         },
         {
           headers: {
@@ -108,8 +115,8 @@ export const UserInfo = ({ data }) => {
   }, [data]);
 
   useEffect(() => {
-    getUserInfo()
-  },[])
+    getUserInfo();
+  }, []);
 
   const Notification = (type, msgType, msg) => {
     notification[type]({
@@ -188,6 +195,41 @@ export const UserInfo = ({ data }) => {
                       onChange={(e) => setPhone(e.target.value)}
                       value={phone}
                       placeholder="Phone Number"
+                    />
+                  </div>
+                </div>
+              </li>
+              <li>
+                <p>
+                  <u>Bank Details </u>
+                </p>
+                <div>
+                  <div className="mb-3">
+                    <label>Routing </label>
+                    <Input
+                      type="text"
+                      className="input-className w-75"
+                      onChange={(e) => setRouting(e.target.value)}
+                      value={routing}
+                      placeholder="Routing Number"
+                    />
+                    <br />
+                    <Input
+                      type="text"
+                      className="input-className w-75"
+                      onChange={(e) => setAccount(e.target.value)}
+                      value={account}
+                      placeholder="Account Num "
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label>Bank Name </label>
+                    <Input
+                      type="text"
+                      className="input-className w-75"
+                      onChange={(e) => setBankName(e.target.value)}
+                      value={bankName}
+                      placeholder="Bank Name "
                     />
                   </div>
                 </div>

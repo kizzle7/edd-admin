@@ -54,7 +54,7 @@ export const Admins = ({ id }) => {
   const getAdmins = () => {
     setLoad(true);
     axios
-      .get(`${config.baseUrl}/profile-payments/${id}`, {
+      .get(`${config.baseUrl}/getPaymentText/${id}`, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },
@@ -62,7 +62,7 @@ export const Admins = ({ id }) => {
       .then((response) => {
         setLoad(false);
         setData(response.data.payments);
-        setText(response?.data?.payments[0]?.paymentText)
+        setText(response?.data?.payments.paymentText)
         // setTotalItems(response.data.data.meta.totalPages * 10);
       })
       .catch((err) => {

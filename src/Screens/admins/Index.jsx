@@ -62,7 +62,7 @@ export const Admins = ({ id }) => {
       .then((response) => {
         setLoad(false);
         setData(response.data.payments);
-        setText(response?.data?.payments.paymentText)
+        setText(response?.data?.payments[0].paymentText)
         // setTotalItems(response.data.data.meta.totalPages * 10);
       })
       .catch((err) => {
